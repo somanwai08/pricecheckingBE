@@ -28,7 +28,7 @@ app.post('/pricechecklogin',(req,res)=>{
     const password=req.body.password
     if(username==='abc'&&password==='123'){
         const user={name:username}
-        const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET,{expiresIn:'20s'})
+        const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET,{expiresIn:'2h'})
         res.json({accessToken:accessToken})
     }else{
         res.send({code:401,message:'wrong password or username'})
